@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" src="css/styles.css">
+
+    <!-- styles -->
+
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+    <div id=header><div><h3>Chile Protests 2019</h3></div><div><p id=user>Mitchell Hedrick</p></div></div>
+<div class="container">
+
+<div class="row" id=top>
+  <div id=mapheader><h3>Recorded Deaths</h3><p>Click individual markers for more information.</p></div>
+  <div id=map>
+          <script>
+            var map;
+            var chile = {lat: -33.4489, lng: -70.6693}
+            function initMap() {
+              map = new google.maps.Map(document.getElementById('map'), {
+                center: chile,
+                zoom: 6
+              });
+
+              var sanBernardo = new google.maps.Marker({position: {lat: -33.5845, lng: -70.6987}, map: map});
+              var maipu = new google.maps.Marker({position: {lat: -33.5106, lng: -70.7573}, map: map});
+              var matucana = new google.maps.Marker({position: {lat: -33.4355174833438, lng: -70.67630443722011}, map: map});
+              var renca = new google.maps.Marker({position: {lat: -33.4064, lng: -70.7280}, map: map});
+              var laserena = new google.maps.Marker({position: {lat: -29.9027, lng: -71.2519}, map: map});
+              var coquimbo = new google.maps.Marker({position: {lat: -29.9590, lng: -71.3389}, map: map});
+              var lapintana = new google.maps.Marker({position: {lat: -33.5856, lng: -70.6286}, map: map});
+              var curico = new google.maps.Marker({position: {lat: -34.9780, lng: -71.2529}, map: map}); //error
+              var talc = new google.maps.Marker({position: {lat: -36.7248, lng: -73.1170}, map: map});
+              var franklin = new google.maps.Marker({position: {lat: -33.4729, lng: -70.6421}, map: map}); //error
+              var maipu2 = new google.maps.Marker({position: {lat: -33.5298, lng: -70.752313}, map: map});
+              var puente = new google.maps.Marker({position: {lat: -33.606670, lng: -70.577362}, map: map}); //error
+              var san = new google.maps.Marker({position: {lat: -36.8305, lng: -73.1167}, map: map});
+
+
+            var contentString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading">San Barnardo - Oct. 19</h4>'+
+            '<div id="bodyContent">'+
+            '<p>Two women died and one man was seriously injured in a fire caused by protestors inside a supermarket in the southern Santiago suburb of San Bernardo.</p>'+
+            '<a href="https://www.emol.com/noticias/Nacional/2019/10/20/964911/Toque-de-queda-santiago.html">'+
+            'Source</a> '+
+            '</div>'+
+            '</div>';
+
+            var contentString2 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading">Maipú, Santiago - Oct. 19</h4>'+
+            '<div id="bodyContent">'+
+            '<p>A Polish teacher was accidentally shot and killed by his father-in-law, who was trying to stop looters in a nearby supermarket.</p>'+
+            '<a href="https://www.eldinamo.cl/nacional/2019/10/23/profesor-polaco-muere-por-disparo-de-su-suegro-mientras-intentaba-detener-un-saqueo/">'+
+            'Source</a> '+
+            '</div>'+
+            '</div>';
+
+            var contentString3 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading">Matucana, Santiago - Oct. 20</h4>'+
+            '<div id="bodyContent">'+
+            '<p>A 38-year-old man died in a supermarket fire on Matucana Avenue, located along the border of Santiago and Quinta Normal.</p>'+
+            '<a href="https://www.cnnchile.com/pais/tercer-fallecido-incendio-matucana_20191020/">'+
+            'Source</a> '+
+            '</div>'+
+            '</div>';
+
+            var contentString4 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading">Renca, Santiago - Oct. 20</h4>'+
+            '<div id="bodyContent">'+
+            '<p>Five people died in a textile factory fire in Renca; three of them were minors.</p>'+
+            '<a href="https://www.dw.com/es/muertos-por-protestas-en-chile-aumentan-a-8-y-se-extiende-toque-de-queda/a-50910101">'+
+            'Source</a> '+
+            '</div>'+
+            '</div>';
+
+            var contentString5 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading">La Serena - Oct. 20</h4>'+
+            '<div id="bodyContent">'+
+            '<p>A 21-year-old protester was shot dead by soldiers in La Serena; another was seriously injured.</p>'+
+            '<a href="https://www.biobiochile.cl/noticias/nacional/region-de-coquimbo/2019/10/20/confirman-muerte-de-una-persona-por-disparo-en-mall-de-la-serena-otra-esta-grave.shtml">'+
+            'Source</a> '+
+            '</div>'+
+            '</div>';
+
+            var contentString6 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading">Coquimbo - Oct. 20</h4>'+
+            '<div id="bodyContent">'+
+            '<p>A 23-year-old protester was shot dead inside a La Polar store by soldiers in Coquimbo.</p>'+
+            '<a href="http://www.diarioeldia.cl/policial/en-medio-crisis-social-reportan-segunda-victima-fatal-en-region">'+
+            'Source</a> '+
+            '</div>'+
+            '</div>';
+
+            var contentString7 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading">La Pintana - Oct. 21</h4>'+
+            '<div id="bodyContent">'+
+            '<p>Two people, one of them 74 years old, died in a supermarket fire in La Pintana.</p>'+
+            '<a href="https://www.mega.cl/noticias/nacional/279774-incendio-sucursal-construmart-la-pintana-deja-dos-muertos.html">'+
+            'Source</a> '+
+            '</div>'+
+            '</div>';
+
+            var contentString8 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading">Curicó - Oct. 21</h4>'+
+            '<div id="bodyContent">'+
+            '<p>A 25-year-old man was shot and killed by armed forces in Curicó, and another three people were seriously injured.</p>'+
+            '<a href="https://www.adnradio.cl/noticias/nacional/militares-disparan-y-matan-a-manifestante-en-curico/20191021/nota/3969155.aspx">'+
+            'Source</a> '+
+            '</div>'+
+            '</div>';
+
+            var contentString9 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading">Talcahuano - Oct. 21</h4>'+
+            '<div id="bodyContent">'+
+            '<p>In the city of Talcahuano during a period of looting, military forces ran over and killed a 23-year-old man.</p>'+
+            '<a href="https://www.cooperativa.cl/noticias/pais/manifestaciones/hombre-fallecio-atropellado-por-patrulla-militar-en-talcahuano/2019-10-21/203711.html">'+
+            'Source</a> '+
+            '</div>'+
+            '</div>';
+
+            var contentString10 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading">Franklin, Santiago - Oct. 21</h4>'+
+            '<div id="bodyContent">'+
+            '<p>A man was fatally electrocuted while looting a Santa Isabel supermarket in a suburb of Santiago.</p>'+
+            '<a href="https://www.cooperativa.cl/noticias/pais/manifestaciones/hombre-murio-electrocutado-en-supermercado-saqueado-en-el-barrio-franklin/2019-10-22/010347.html">'+
+            'Source</a> '+
+            '</div>'+
+            '</div>'
+
+            var contentString11 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading">Maipú, Santiago - Oct. 21</h4>'+
+            '<div id="bodyContent">'+
+            '<p>A 39-year-old man died in a hospital from injuries sustained in a beating carried out by Carabineros in Maipú.</p>'+
+            '<a href="https://ciperchile.cl/2019/10/22/manifestante-murio-en-la-posta-central-y-gobierno-no-lo-incluyo-en-la-lista-oficial-de-fallecidos/">'+
+            'Source</a> '+
+            '</div>'+
+            '</div>'
+
+            var contentString12 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading">Puente Alto - Oct. 21</h4>'+
+            '<div id="bodyContent">'+
+            '<p>A man was killed after being shot in the head by a tenant who feared looting.</p>'+
+            '<a href="https://www.cooperativa.cl/noticias/pais/manifestaciones/hombre-murio-baleado-por-comerciante-en-puente-alto/2019-10-22/203402.html">'+
+            'Source</a> '+
+            '</div>'+
+            '</div>'
+
+            var contentString13 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading">San Pedro de la Paz - Oct. 21</h4>'+
+            '<div id="bodyContent">'+
+            '<p>A driver rammed his car into protesters killing two people, including a 4 year old toddler, and wounding 17; this event increased the death toll to 17.</p>'+
+            '<a href="https://www.elpais.com.co/mundo/nino-de-4-anos-entre-las-victimas-fatales-de-protestas-en-chile-que-ya-dejan-18-muertos.html">'+
+            'Source</a> '+
+            '</div>'+
+            '</div>'
+
+            var sanBernardoInfo = new google.maps.InfoWindow({
+            content: contentString
+            });
+
+            var maipuInfo = new google.maps.InfoWindow({
+            content: contentString2
+            });
+
+            var matucanaInfo = new google.maps.InfoWindow({
+            content: contentString3
+            });
+
+            var rencaInfo = new google.maps.InfoWindow({
+            content: contentString4
+            });
+
+            var laserenaInfo = new google.maps.InfoWindow({
+            content: contentString5
+            });
+
+            var coquimboInfo = new google.maps.InfoWindow({
+            content: contentString6
+            });
+
+            var lapintanaInfo = new google.maps.InfoWindow({
+            content: contentString7
+            });
+
+            var curicoInfo = new google.maps.InfoWindow({
+            content: contentString8
+            });
+
+            var talcInfo = new google.maps.InfoWindow({
+            content: contentString9
+            });
+
+            var franklinInfo = new google.maps.InfoWindow({
+            content: contentString10
+            });
+
+            var maipu2Info = new google.maps.InfoWindow({
+            content: contentString11
+            });
+
+            var puenteInfo = new google.maps.InfoWindow({
+            content: contentString12
+            });
+
+            var sanInfo = new google.maps.InfoWindow({
+            content: contentString13
+            });
+
+
+            sanBernardo.addListener('click', function() {
+            sanBernardoInfo.open(map, sanBernardo);
+            });
+
+            maipu.addListener('click', function() {
+            maipuInfo.open(map, maipu);
+            });
+
+            matucana.addListener('click', function() {
+            matucanaInfo.open(map, matucana);
+            });
+
+            renca.addListener('click', function() {
+            rencaInfo.open(map, renca);
+            });
+
+            laserena.addListener('click', function() {
+            laserenaInfo.open(map, laserena);
+            });
+
+            coquimbo.addListener('click', function() {
+            coquimboInfo.open(map, coquimbo);
+            });
+
+            lapintana.addListener('click', function() {
+            lapintanaInfo.open(map, lapintana);
+            });
+
+            curico.addListener('click', function() {
+            curicoInfo.open(map, curico);
+            });
+
+            talc.addListener('click', function() {
+            talcInfo.open(map, talc);
+            });
+
+            franklin.addListener('click', function() {
+            franklinInfo.open(map, franklin);
+            });
+
+            maipu2.addListener('click', function() {
+            maipu2Info.open(map, maipu2);
+            });
+
+            puente.addListener('click', function() {
+            puenteInfo.open(map, puente);
+            });
+
+            san.addListener('click', function() {
+            sanInfo.open(map, san);
+            });
+
+            }
+
+          </script>
+          <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZKvQ6U8n63AB-12PaFPr2MazFY23IXpQ&callback=initMap">
+      </script>
+</div>
+
+<div class="row">
+  <div class="col-md-4" id=vidContain>
+    <div id=videos>
+      <script src="https://apis.google.com/js/api.js"></script>
+      <h3>Youtube Videos on Chile Protests</h3>
+      <p>Click "authorize and load" to sign in with your Google account, then click "Execute."</p>
+      <div>
+        <button onclick="authenticate().then(loadClient)">authorize and load</button>
+        <button onclick="execute()">execute</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-7">
+    <dl>
+      <h3>#ChileProtests</h3>
+    </dl>
+  </div>
+  </div>
+  </div>
+</div>
+<footer>
+<p>Mitchell Hedrick - MEJO487 - 11/27/19</p>
+</footer>
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+
+    <script src="js/scripts.js"></script>
+    <!-- <script src="js/scripts.tweets.js"></script> -->
+    <!-- <script src="js/scripts.maps.js"></script> -->
+    <script src="js/scripts.youtube.js"></script>
+
+
+  </body>
+</html>
